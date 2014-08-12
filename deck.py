@@ -3,12 +3,19 @@ import copy
 from card import *
 
 # Inherits from CardCollection class, adds shuffle capability
-class Deck:
+class WizardDeck:
 	def __init__(self):
 		self.cards = []
+
+		# Add normal cards to deck for a deck of 52
 		for suit in range(1, 5):
-			for rank in range(1,14):
-				self.cards.append(Card(rank, suit))
+			for rank in range(2,15):
+				self.cards.append(WizardCard(rank, suit))
+
+		# Add wildcards
+		for idx in range(0, 4):
+			self.cards.append(WizardCard(1, 0))
+			self.cards.append(WizardCard(15, 0))
 				
 	def shuffle(self):
 		random.shuffle(self.cards)
