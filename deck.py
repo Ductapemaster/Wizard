@@ -9,13 +9,13 @@ class WizardDeck:
 
 		# Add normal cards to deck for a deck of 52
 		for suit in range(1, 5):
-			for rank in range(2,15):
+			for rank in range(2, 15):
 				self.cards.append(WizardCard(rank, suit))
 
 		# Add wildcards
 		for idx in range(0, 4):
 			self.cards.append(WizardCard(1, 0))
-			self.cards.append(WizardCard(15, 0))
+			self.cards.append(WizardCard(15, 5))
 				
 	def shuffle(self):
 		random.shuffle(self.cards)

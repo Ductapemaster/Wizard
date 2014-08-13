@@ -6,13 +6,15 @@ class WizardCard:
 
 	# Define face cards
 	face_cards = {-1: 'NUL', 1: 'JES', 10: '10 ', 11:'JAK', 12:'QEN', 13:'KNG', 14:'ACE', 15:'WIZ'}
-	# Define suits, 0 is a wildcard suit (represents all suits)
-	suits = {-1: 'N', 0: 'WILD', 1: 'S', 2: 'H', 3: 'C', 4: 'D'}
+	# Define suits, 0 is ester suit, 5 is wizard suit
+	suits = {-1: 'N', 0: 'JES', 1: 'S', 2: 'H', 3: 'C', 4: 'D', 5: 'WIZ'}
 
 	def __init__(self, rank=-1, suit=-1):
 		self.rank = rank
-		if rank == 1 or rank == 15:
+		if rank == 1:
 			self.suit = 0
+		elif rank == 15:
+			self.suit = 5
 		else:
 			self.suit = suit
 		
